@@ -1,6 +1,6 @@
 # Coindum
 
-[Deployed Site]()
+<!-- [Deployed Site]() -->
 
 ## Tech Stack
 
@@ -9,5 +9,5 @@
 
 ## Resources
 
-    * [Coinranking API @RapidAPI](https://rapidapi.com/Coinranking/api/coinranking1/)
-    * [Currency Converter API @RapidAPI](https://rapidapi.com/natkapral/api/currency-converter5)
+- [Coinranking API @RapidAPI](https://rapidapi.com/Coinranking/api/coinranking1/)
+- [Currency Converter API @RapidAPI](https://rapidapi.com/natkapral/api/currency-converter5)
