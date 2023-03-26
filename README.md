@@ -4,8 +4,8 @@
 
 ## Tech Stack
 
-    * ReactJS
-    * Tailwind CSS
+- ReactJS
+- Tailwind CSS
 
 ## Resources
 
