@@ -6,6 +6,9 @@ module.exports = {
       maxWidth: {
         "1580px": "1580px",
       },
+      screens: {
+        md481: "481px",
+      },
     },
   },
   plugins: [],
