@@ -1,0 +1,88 @@
+@use "../Constants/fontConstant" as *;
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 0.5em;
+  color: rgb(255, 255, 255);
+}
+
+.app-title {
+  padding: 0.2em 0.3em;
+  border: 2px solid white;
+  .link {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    font-size: calc(0.6em + 1vw);
+    font-family: $titleFont;
+
+    @media (max-width: 480px) {
+      font-size: 1em;
+    }
+  }
+}
+
+.nav-links {
+  display: flex;
+  padding: 0.2rem 0.3rem;
+
+  .home-link,
+  .about-link {
+    font-size: calc(0.6em + 0.5vw);
+    font-weight: 500;
+    &:active {
+      font-weight: 600;
+    }
+  }
+
+  .home-link {
+    margin-right: 0.9em;
+  }
+}
+
+.connect-section {
+  display: flex;
+  padding: 0.2rem 0.3rem;
+}
+
+.twitter-icon {
+  margin-right: 0.9em;
+}
+
+.twitter-link {
+  position: relative;
+  &:hover {
+    &::after {
+      content: "Twitter";
+      position: absolute;
+      font-size: 0.5em;
+      left: 0em;
+      top: 1.7em;
+      background-color: white;
+      color: black;
+      padding: 0.2em;
+      box-shadow: 0 0 5px 1px #000;
+    }
+  }
+}
+
+.discord-link {
+  position: relative;
+
+  &:hover {
+    &::after {
+      content: "Discord";
+      position: absolute;
+      font-size: 0.5em;
+      right: 0em;
+      top: 1.7em;
+      background-color: white;
+      color: black;
+      padding: 0.2em;
+      box-shadow: 0 0 5px 1px #000;
+    }
+  }
+}
