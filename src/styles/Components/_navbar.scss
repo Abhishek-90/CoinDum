@@ -9,9 +9,16 @@
   color: rgb(255, 255, 255);
 }
 
+.sticky {
+  position: fixed;
+  background: #000;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.8);
+}
+
 .app-title {
   padding: 0.2em 0.3em;
   border: 2px solid white;
+
   .link {
     text-transform: uppercase;
     font-weight: 600;
@@ -22,6 +29,10 @@
     @media (max-width: 480px) {
       font-size: 1em;
     }
+
+    @media (min-width: 1440px) {
+      font-size: 2em;
+    }
   }
 }
 
@@ -30,15 +41,24 @@
   padding: 0.2rem 0.3rem;
 
   .home-link,
-  .about-link {
+  .about-link,
+  .choose-link,
+  .join-link {
     font-size: calc(0.6em + 0.5vw);
     font-weight: 500;
+
+    @media (max-width: 540px) {
+      display: none;
+    }
+
     &:active {
       font-weight: 600;
     }
   }
 
-  .home-link {
+  .home-link,
+  .about-link,
+  .choose-link {
     margin-right: 0.9em;
   }
 }
@@ -46,6 +66,10 @@
 .connect-section {
   display: flex;
   padding: 0.2rem 0.3rem;
+
+  @media (max-width: 540px) {
+    display: none;
+  }
 }
 
 .twitter-icon {
@@ -54,6 +78,8 @@
 
 .twitter-link {
   position: relative;
+  display: flex;
+  align-items: center;
   &:hover {
     &::after {
       content: "Twitter";
@@ -71,7 +97,8 @@
 
 .discord-link {
   position: relative;
-
+  display: flex;
+  align-items: center;
   &:hover {
     &::after {
       content: "Discord";

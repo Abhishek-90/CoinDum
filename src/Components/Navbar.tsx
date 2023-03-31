@@ -1,10 +1,23 @@
 import { Link } from "react-router-dom";
 import { FaTwitter, FaDiscord } from "react-icons/fa";
+import { useState } from "react";
 
 function Navbar() {
+  const [sticky, setSticky] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 100) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
   return (
     <div className="container">
-      <div className="navbar">
+      <div className={`navbar ${sticky ? "sticky" : ""}`}>
         <div className="app-title">
           <Link className="link title-link" to="/">
             Coindum
@@ -16,6 +29,12 @@ function Navbar() {
           </Link>
           <Link className="link about-link" to="/about">
             About
+          </Link>
+          <Link className="link choose-link" to="/about">
+            Choose Us
+          </Link>
+          <Link className="link join-link" to="/about">
+            Join Us
           </Link>
         </div>
         <div className="connect-section">
