@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { FaTwitter, FaDiscord } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Navbar() {
   const [sticky, setSticky] = useState(false);
+  const [openSideBar, setOpenSideBar] = useState(false);
 
   const handleScroll = () => {
     if (window.scrollY > 100) {
@@ -15,11 +16,18 @@ function Navbar() {
 
   window.addEventListener("scroll", handleScroll);
 
+  const goTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="container">
       <div className={`navbar ${sticky ? "sticky" : ""}`}>
         <div className="app-title">
-          <Link className="link title-link" to="/">
+          <Link className="link title-link" to="" onClick={goTop}>
             Coindum
           </Link>
         </div>
@@ -54,6 +62,8 @@ function Navbar() {
           </a>
         </div>
       </div>
+
+      <div className="side-bar"></div>
     </div>
   );
 }

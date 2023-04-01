@@ -23,15 +23,11 @@
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.09em;
-    font-size: calc(0.6em + 1vw);
+    font-size: min(calc(0.6em + 1vw), 2em);
     font-family: $titleFont;
 
     @media (max-width: 480px) {
       font-size: 1em;
-    }
-
-    @media (min-width: 1440px) {
-      font-size: 2em;
     }
   }
 }
@@ -44,10 +40,10 @@
   .about-link,
   .choose-link,
   .join-link {
-    font-size: calc(0.6em + 0.5vw);
+    font-size: min(calc(0.6em + 0.5vw), 1.5em);
     font-weight: 500;
 
-    @media (max-width: 540px) {
+    @media (max-width: 750px) {
       display: none;
     }
 
@@ -59,7 +55,7 @@
   .home-link,
   .about-link,
   .choose-link {
-    margin-right: 0.9em;
+    margin-right: min(calc(0.6em + 0.4vw), 1em);
   }
 }
 
@@ -67,7 +63,7 @@
   display: flex;
   padding: 0.2rem 0.3rem;
 
-  @media (max-width: 540px) {
+  @media (max-width: 750px) {
     display: none;
   }
 }
@@ -80,6 +76,7 @@
   position: relative;
   display: flex;
   align-items: center;
+
   &:hover {
     &::after {
       content: "Twitter";
@@ -99,6 +96,7 @@
   position: relative;
   display: flex;
   align-items: center;
+
   &:hover {
     &::after {
       content: "Discord";
