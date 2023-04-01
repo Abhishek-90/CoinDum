@@ -70,8 +70,8 @@ function Navbar() {
           </a>
         </div>
 
-        <button className="btn menu-btn" onClick={handleMobile}>
-          <AiOutlineMenu className="hamburger-icon" height="2em" />
+        <button className="menu-btn" onClick={handleMobile}>
+          <AiOutlineMenu className="hamburger-icon" />
         </button>
       </div>
 

@@ -112,22 +112,20 @@
   }
 }
 
-.btn {
-  display: flex !important;
+.menu-btn {
+  display: flex;
   background: transparent;
   border: none;
-}
-
-.menu-btn {
-  @media (min-width: 751px) {
-    display: none;
-  }
 
   .hamburger-icon {
     display: block;
     background: transparent;
     color: white;
     font-size: 1.6em;
+  }
+
+  @media (min-width: 751px) {
+    display: none;
   }
 }
 
@@ -151,6 +149,9 @@
 }
 
 .btn-close {
+  display: flex !important;
+  background: transparent;
+  border: none;
   position: absolute;
   right: 0.7em;
   top: 0.7em;
