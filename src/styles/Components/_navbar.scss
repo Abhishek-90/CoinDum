@@ -111,3 +111,68 @@
     }
   }
 }
+
+.btn {
+  display: flex !important;
+  background: transparent;
+  border: none;
+}
+
+.menu-btn {
+  @media (min-width: 751px) {
+    display: none;
+  }
+
+  .hamburger-icon {
+    display: block;
+    background: transparent;
+    color: white;
+    font-size: 1.6em;
+  }
+}
+
+.close {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  background: #e6e6e6;
+  transition: all 0.5s ease-in-out;
+}
+
+.open {
+  right: 0;
+}
+
+.btn-close {
+  position: absolute;
+  right: 0.7em;
+  top: 0.7em;
+  z-index: 99;
+
+  .close-icon {
+    font-size: 3em;
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+
+  .about-link,
+  .home-link,
+  .join-link,
+  .choose-link {
+    color: black;
+    font-weight: 500;
+    margin: 10px 0;
+  }
+}

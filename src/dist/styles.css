@@ -22,7 +22,6 @@ body {
   width: 100%;
   max-width: 65em;
   margin: 0 auto;
-  position: relative;
 }
 
 .link {
@@ -139,6 +138,68 @@ body {
   color: black;
   padding: 0.2em;
   box-shadow: 0 0 5px 1px #000;
+}
+
+.btn {
+  display: flex !important;
+  background: transparent;
+  border: none;
+}
+
+@media (min-width: 751px) {
+  .menu-btn {
+    display: none;
+  }
+}
+.menu-btn .hamburger-icon {
+  display: block;
+  background: transparent;
+  color: white;
+  font-size: 1.6em;
+}
+
+.close {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  background: #e6e6e6;
+  transition: all 0.5s ease-in-out;
+}
+
+.open {
+  right: 0;
+}
+
+.btn-close {
+  position: absolute;
+  right: 0.7em;
+  top: 0.7em;
+  z-index: 99;
+}
+.btn-close .close-icon {
+  font-size: 3em;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+.links .about-link,
+.links .home-link,
+.links .join-link,
+.links .choose-link {
+  color: black;
+  font-weight: 500;
+  margin: 10px 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
