@@ -249,4 +249,46 @@ body {
   }
 }
 
+.top-4-coins-wrapper {
+  width: 100%;
+  padding: 0.5em;
+  display: flex;
+  justify-content: center;
+}
+.top-4-coins-wrapper .top-4-coins {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+.top-4-coins-wrapper .top-4-coins .coin {
+  margin: 0 2em;
+}
+@media (max-width: 540px) {
+  .top-4-coins-wrapper .top-4-coins .coin {
+    margin: 0 1em;
+  }
+}
+.top-4-coins-wrapper .top-4-coins .coin .coin-link {
+  color: #dddfe4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+.top-4-coins-wrapper .top-4-coins .coin .coin-link img {
+  width: calc(2.5em + 2vw);
+}
+.top-4-coins-wrapper .top-4-coins .coin .coin-link .coin-name {
+  font-weight: bold;
+  margin-top: 0.5em;
+}
+.top-4-coins-wrapper .top-4-coins .coin .coin-link .negative {
+  color: rgb(244, 38, 38);
+  font-weight: bold;
+}
+.top-4-coins-wrapper .top-4-coins .coin .coin-link .positive {
+  color: rgb(39, 176, 39);
+  font-weight: bold;
+}
+
 /*# sourceMappingURL=styles.css.map */
