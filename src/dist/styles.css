@@ -36,20 +36,20 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0.5em 0.5em;
-  color: rgb(255, 255, 255);
+  color: #dddfe4;
 }
 
 .sticky {
   position: fixed;
   top: 0;
-  background: #000;
+  background: #181616;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.8);
   z-index: 999;
 }
 
 .app-title {
   padding: 0.2em 0.3em;
-  border: 2px solid white;
+  border: 2px solid #dddfe4;
 }
 .app-title .link {
   text-transform: uppercase;
@@ -120,10 +120,10 @@ body {
   font-size: 0.5em;
   left: 0em;
   top: 1.7em;
-  background-color: white;
-  color: black;
+  background-color: #dddfe4;
+  color: #181616;
   padding: 0.2em;
-  box-shadow: 0 0 5px 1px #000;
+  box-shadow: 0 0 5px 1px #181616;
 }
 
 .discord-link {
@@ -137,10 +137,10 @@ body {
   font-size: 0.5em;
   right: 0em;
   top: 1.7em;
-  background-color: white;
-  color: black;
+  background-color: #dddfe4;
+  color: #181616;
   padding: 0.2em;
-  box-shadow: 0 0 5px 1px #000;
+  box-shadow: 0 0 5px 1px #181616;
 }
 
 .menu-btn {
@@ -151,7 +151,7 @@ body {
 .menu-btn .hamburger-icon {
   display: block;
   background: transparent;
-  color: white;
+  color: #dddfe4;
   font-size: 1.6em;
 }
 @media (min-width: 751px) {
@@ -171,7 +171,7 @@ body {
   bottom: 0;
   right: -100%;
   width: 100%;
-  background: #e6e6e6;
+  background: #dddfe4;
   transition: all 0.5s ease-in-out;
   z-index: 1000;
 }
@@ -203,20 +203,21 @@ body {
 .links .home-link,
 .links .join-link,
 .links .choose-link {
-  color: black;
+  color: #181616;
   font-weight: 500;
   margin: 10px 0;
 }
 
 .intro {
   margin: 3em 0;
-  color: white;
+  color: #dddfe4;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1em 0;
+  padding: 1em 0.5em;
+  flex-wrap: wrap;
 }
 .intro h2 {
   font-size: min(4em + 0.6vw, 6em);
@@ -240,6 +241,11 @@ body {
 @media (max-width: 750px) {
   .intro p {
     font-size: 2em;
+  }
+}
+@media (max-width: 750px) {
+  .intro {
+    margin: 1.5em 0;
   }
 }
 
