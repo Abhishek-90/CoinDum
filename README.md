@@ -1,11 +1,11 @@
 # Coindum
 
-<!-- [Deployed Site]() -->
+[Deployed Site](https://coin-dum.vercel.app)
 
 ## Tech Stack
 
 - ReactJS
-- Tailwind CSS
+- SCSS
 
 ## Resources
 
