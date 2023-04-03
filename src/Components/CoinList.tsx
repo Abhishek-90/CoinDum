@@ -93,6 +93,18 @@ function CoinList() {
           </div>
         </div>
       </div>
+
+      {/* All Coin Details */}
+      <div className="coin-detail-wrapper">
+        <div className="coin-detail">
+          <div className="header">
+            <p>Coin</p>
+            <p>Price</p>
+            <p>Market Cap</p>
+            <p>24H Change</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

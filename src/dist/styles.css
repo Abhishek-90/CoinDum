@@ -263,6 +263,12 @@ body {
 .top-4-coins-wrapper .top-4-coins .coin {
   margin: 0 2em;
 }
+.top-4-coins-wrapper .top-4-coins .coin:first-child {
+  margin-left: 0;
+}
+.top-4-coins-wrapper .top-4-coins .coin:last-child {
+  margin-right: 0;
+}
 @media (max-width: 540px) {
   .top-4-coins-wrapper .top-4-coins .coin {
     margin: 0 1em;
@@ -289,6 +295,56 @@ body {
 .top-4-coins-wrapper .top-4-coins .coin .coin-link .positive {
   color: rgb(39, 176, 39);
   font-weight: bold;
+}
+
+.coin-detail-wrapper {
+  display: flex;
+  width: 100%;
+  padding: 0.5em;
+  color: #dddfe4;
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+.coin-detail-wrapper .coin-detail {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  overflow-x: auto;
+  padding-bottom: 1em;
+}
+.coin-detail-wrapper .coin-detail .header {
+  display: grid;
+  grid-template-columns: 16fr 25fr 25fr 25fr;
+  gap: 2rem;
+  background: linear-gradient(25deg, #2600fc, #ff00ea);
+  border-radius: 8px 8px 0 0;
+  padding: 0.5em;
+}
+@media (max-width: 700px) {
+  .coin-detail-wrapper .coin-detail .header {
+    width: fit-content;
+  }
+}
+@media (max-width: 800px) {
+  .coin-detail-wrapper .coin-detail .header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.coin-detail-wrapper .coin-detail .header p {
+  text-align: right;
+  font-size: min(1em + 0.5vw);
+}
+.coin-detail-wrapper .coin-detail .header p:first-child {
+  text-align: left;
+}
+@media (max-width: 800px) {
+  .coin-detail-wrapper .coin-detail .header p {
+    width: 7rem;
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
