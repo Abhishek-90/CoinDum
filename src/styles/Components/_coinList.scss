@@ -40,19 +40,17 @@
           font-weight: bold;
           margin-top: 0.5em;
         }
-
-        .negative {
-          color: rgb(244, 38, 38);
-          font-weight: bold;
-        }
-
-        .positive {
-          color: rgb(39, 176, 39);
-          font-weight: bold;
-        }
       }
     }
   }
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: rgb(10, 163, 10);
 }
 
 .coin-detail-wrapper {
@@ -80,10 +78,6 @@
       border-radius: 8px 8px 0 0;
       padding: 0.5em;
 
-      @media (max-width: 700px) {
-        width: fit-content;
-      }
-
       @media (max-width: 800px) {
         display: flex;
         justify-content: space-between;
@@ -91,7 +85,7 @@
 
       p {
         text-align: right;
-        font-size: min(calc(1em + 0.5vw));
+        font-size: min(calc(1em + 0.5vw), 1.5em);
 
         &:first-child {
           text-align: left;
@@ -101,6 +95,78 @@
           width: 7rem;
           text-align: center;
         }
+
+        &:last-child {
+          @media (max-width: 800px) {
+            width: 9rem;
+          }
+        }
+      }
+
+      @media (max-width: 700px) {
+        width: fit-content;
+      }
+    }
+
+    .detail-row {
+      display: grid;
+      grid-template-columns: 16fr 25fr 25fr 25fr;
+      padding: 1em 0.5em;
+      gap: 2em;
+      text-decoration: none;
+      color: $white;
+      align-items: center;
+      background-color: $black;
+      border-bottom: 1px solid $white;
+
+      span {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 3em;
+          margin-right: 1em;
+
+          @media (max-width: 800px) {
+            width: 3em;
+            margin-right: 0.7em;
+          }
+        }
+
+        p {
+          font-size: min(calc(1em + 0.3vw), 1.5em);
+          font-weight: bold;
+          text-align: left;
+
+          @media (max-width: 800px) {
+            font-size: 1em;
+          }
+        }
+      }
+
+      & > p {
+        text-align: right;
+        font-size: min(calc(1em + 0.1vw), 1.5em);
+
+        @media (max-width: 800px) {
+          width: 7rem;
+          text-align: center;
+        }
+
+        &:last-child {
+          @media (max-width: 800px) {
+            width: 9rem;
+          }
+        }
+      }
+
+      @media (max-width: 700px) {
+        width: fit-content;
+      }
+
+      @media (max-width: 800px) {
+        display: flex;
+        justify-content: space-between;
       }
     }
   }

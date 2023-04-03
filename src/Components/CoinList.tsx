@@ -10,6 +10,10 @@ function CoinList() {
     }
   };
 
+  function numberWithCommas(x: string) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   const obj = {
     uuid: "Qwsogvtv82FCd",
     symbol: "BTC",
@@ -64,7 +68,9 @@ function CoinList() {
               <img className="coin-img" src={obj.iconUrl} alt="coin-img" />
               <p className="coin-name">{obj.name}</p>
               <p className="coin-price">$ {millify(parseInt(obj.price))}</p>
-              <p className={`${getSign(obj.change)}`}>{obj.change} %</p>
+              <p className={`${parseFloat(obj.change) >= 0 ? "green" : "red"}`}>
+                {obj.change} %
+              </p>
             </Link>
           </div>
           <div className="coin">
@@ -72,7 +78,9 @@ function CoinList() {
               <img className="coin-img" src={obj.iconUrl} alt="coin-img" />
               <p className="coin-name">{obj.name}</p>
               <p className="coin-price">$ {millify(parseInt(obj.price))}</p>
-              <p className={`${getSign(obj.change)}`}>{obj.change} %</p>
+              <p className={`${parseFloat(obj.change) >= 0 ? "green" : "red"}`}>
+                {obj.change} %
+              </p>
             </Link>
           </div>
           <div className="coin">
@@ -80,7 +88,9 @@ function CoinList() {
               <img className="coin-img" src={obj.iconUrl} alt="coin-img" />
               <p className="coin-name">{obj.name}</p>
               <p className="coin-price">$ {millify(parseInt(obj.price))}</p>
-              <p className={`${getSign(obj.change)}`}>{obj.change} %</p>
+              <p className={`${parseFloat(obj.change) >= 0 ? "green" : "red"}`}>
+                {obj.change} %
+              </p>
             </Link>
           </div>
           <div className="coin">
@@ -88,7 +98,9 @@ function CoinList() {
               <img className="coin-img" src={obj.iconUrl} alt="coin-img" />
               <p className="coin-name">{obj.name}</p>
               <p className="coin-price">$ {millify(parseInt(obj.price))}</p>
-              <p className={`${getSign(obj.change)}`}>{obj.change} %</p>
+              <p className={`${parseFloat(obj.change) >= 0 ? "green" : "red"}`}>
+                {obj.change} %
+              </p>
             </Link>
           </div>
         </div>
@@ -100,9 +112,21 @@ function CoinList() {
           <div className="header">
             <p>Coin</p>
             <p>Price</p>
-            <p>Market Cap</p>
             <p>24H Change</p>
+            <p>Market Cap</p>
           </div>
+
+          <Link className="detail-row" to={`/coinDetails?uuid=${obj.uuid}`}>
+            <span>
+              <img src={obj.iconUrl} alt={obj.name} />
+              <p>{obj.name}</p>
+            </span>
+            <p>{"$ " + parseFloat(obj.price).toFixed(2)}</p>
+            <p className={`${parseFloat(obj.change) >= 0 ? "green" : "red"}`}>
+              {obj.change + " %"}
+            </p>
+            <p>{numberWithCommas(obj.marketCap)}</p>
+          </Link>
         </div>
       </div>
     </div>
