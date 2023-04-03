@@ -1,15 +1,6 @@
 import { Link } from "react-router-dom";
-import { millify } from "millify";
 
 function CoinList() {
-  const getSign = (val: string): string => {
-    if (val.charAt(0) === "-") {
-      return "negative";
-    } else {
-      return "positive";
-    }
-  };
-
   function numberWithCommas(x: string) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
@@ -67,37 +58,7 @@ function CoinList() {
             <Link className="coin-link" to={`/coinDetails?uuid=${obj.uuid}`}>
               <img className="coin-img" src={obj.iconUrl} alt="coin-img" />
               <p className="coin-name">{obj.name}</p>
-              <p className="coin-price">$ {millify(parseInt(obj.price))}</p>
-              <p className={`${parseFloat(obj.change) >= 0 ? "green" : "red"}`}>
-                {obj.change} %
-              </p>
-            </Link>
-          </div>
-          <div className="coin">
-            <Link className="coin-link" to={`/coinDetails?uuid=${obj.uuid}`}>
-              <img className="coin-img" src={obj.iconUrl} alt="coin-img" />
-              <p className="coin-name">{obj.name}</p>
-              <p className="coin-price">$ {millify(parseInt(obj.price))}</p>
-              <p className={`${parseFloat(obj.change) >= 0 ? "green" : "red"}`}>
-                {obj.change} %
-              </p>
-            </Link>
-          </div>
-          <div className="coin">
-            <Link className="coin-link" to={`/coinDetails?uuid=${obj.uuid}`}>
-              <img className="coin-img" src={obj.iconUrl} alt="coin-img" />
-              <p className="coin-name">{obj.name}</p>
-              <p className="coin-price">$ {millify(parseInt(obj.price))}</p>
-              <p className={`${parseFloat(obj.change) >= 0 ? "green" : "red"}`}>
-                {obj.change} %
-              </p>
-            </Link>
-          </div>
-          <div className="coin">
-            <Link className="coin-link" to={`/coinDetails?uuid=${obj.uuid}`}>
-              <img className="coin-img" src={obj.iconUrl} alt="coin-img" />
-              <p className="coin-name">{obj.name}</p>
-              <p className="coin-price">$ {millify(parseInt(obj.price))}</p>
+              <p className="coin-price">$ {parseFloat(obj.price).toFixed(2)}</p>
               <p className={`${parseFloat(obj.change) >= 0 ? "green" : "red"}`}>
                 {obj.change} %
               </p>
