@@ -1,6 +1,24 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import fetchData, { coinListOptions } from "../utils/fetchData";
 
 function CoinList() {
+  const [coinData, setCoinData] = useState([]);
+  const [top4CoinData, setTop4CoinData] = useState([]);
+
+  useEffect(() => {
+    const runFetchData = async () => {
+      const response = await fetchData(
+        "https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0",
+        coinListOptions
+      );
+      console.log(response);
+      setCoinData(response.coins);
+      setTop4CoinData(response.coins.splice(0, 4));
+    };
+    runFetchData();
+  }, []);
+
   function numberWithCommas(x: string) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
@@ -54,16 +72,28 @@ function CoinList() {
     <div className="container">
       <div className="top-4-coins-wrapper">
         <div className="top-4-coins">
-          <div className="coin">
-            <Link className="coin-link" to={`/coinDetails?uuid=${obj.uuid}`}>
-              <img className="coin-img" src={obj.iconUrl} alt="coin-img" />
-              <p className="coin-name">{obj.name}</p>
-              <p className="coin-price">$ {parseFloat(obj.price).toFixed(2)}</p>
-              <p className={`${parseFloat(obj.change) >= 0 ? "green" : "red"}`}>
-                {obj.change} %
-              </p>
-            </Link>
-          </div>
+          {top4CoinData.length > 0 &&
+            top4CoinData.map((coin: any) => (
+              <div className="coin">
+                <Link
+                  className="coin-link"
+                  to={`/coinDetails?uuid=${coin.uuid}`}
+                >
+                  <img className="coin-img" src={coin.iconUrl} alt="coin-img" />
+                  <p className="coin-name">{coin.name}</p>
+                  <p className="coin-price">
+                    $ {parseFloat(coin.price).toFixed(2)}
+                  </p>
+                  <p
+                    className={`${
+                      parseFloat(coin.change) >= 0 ? "green" : "red"
+                    }`}
+                  >
+                    {coin.change} %
+                  </p>
+                </Link>
+              </div>
+            ))}
         </div>
       </div>
 
@@ -77,17 +107,27 @@ function CoinList() {
             <p>Market Cap</p>
           </div>
 
-          <Link className="detail-row" to={`/coinDetails?uuid=${obj.uuid}`}>
-            <span>
-              <img src={obj.iconUrl} alt={obj.name} />
-              <p>{obj.name}</p>
-            </span>
-            <p>{"$ " + parseFloat(obj.price).toFixed(2)}</p>
-            <p className={`${parseFloat(obj.change) >= 0 ? "green" : "red"}`}>
-              {obj.change + " %"}
-            </p>
-            <p>{numberWithCommas(obj.marketCap)}</p>
-          </Link>
+          {coinData.length > 0 &&
+            coinData.map((coin: any) => (
+              <Link
+                className="detail-row"
+                to={`/coinDetails?uuid=${coin.uuid}`}
+              >
+                <span>
+                  <img src={coin.iconUrl} alt={coin.name} />
+                  <p>{coin.symbol}</p>
+                </span>
+                <p>{"$ " + parseFloat(coin.price).toFixed(2)}</p>
+                <p
+                  className={`${
+                    parseFloat(coin.change) >= 0 ? "green" : "red"
+                  }`}
+                >
+                  {obj.change + " %"}
+                </p>
+                <p>{numberWithCommas(coin.marketCap)}</p>
+              </Link>
+            ))}
         </div>
       </div>
     </div>
