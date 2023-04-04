@@ -62,7 +62,6 @@
   padding: 0.5em 2em;
   color: $white;
   margin-top: 4em;
-  margin-bottom: 4em;
 
   .coin-detail {
     width: 100%;
@@ -172,6 +171,34 @@
         display: flex;
         justify-content: space-between;
       }
+    }
+  }
+
+  @media (max-width: 800px) {
+    padding: 0.5em;
+  }
+}
+
+.pagination {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  color: $white;
+  padding: 1em;
+
+  &-btn {
+    background: $white;
+    border: none;
+    padding: 1em;
+    font-weight: bold;
+    color: $black;
+
+    &-prev {
+      margin-right: 1.5em;
+    }
+
+    &-next {
+      margin-left: 1.5em;
     }
   }
 

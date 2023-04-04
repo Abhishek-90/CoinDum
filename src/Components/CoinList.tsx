@@ -18,10 +18,20 @@ function CoinList() {
         coinListOptions
       );
       setCoinData(response.coins);
-      setTop4CoinData(response.coins.splice(0, 4));
     };
     runFetchData();
   }, [page]);
+
+  useEffect(() => {
+    const runFetchData = async () => {
+      const response = await fetchData(
+        `https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=4&offset=0`,
+        coinListOptions
+      );
+      setTop4CoinData(response.coins);
+    };
+    runFetchData();
+  }, []);
 
   function numberWithCommas(x: string) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -32,11 +42,12 @@ function CoinList() {
       <div className="top-4-coins-wrapper">
         <div className="top-4-coins">
           {top4CoinData.length > 0 &&
-            top4CoinData.map((coin: any) => (
+            top4CoinData.map((coin: any, index: number) => (
               <div className="coin">
                 <Link
                   className="coin-link"
                   to={`/coinDetails?uuid=${coin.uuid}`}
+                  key={index}
                 >
                   <img className="coin-img" src={coin.iconUrl} alt="coin-img" />
                   <p className="coin-name">{coin.name}</p>
@@ -71,6 +82,7 @@ function CoinList() {
               <Link
                 className="detail-row"
                 to={`/coinDetails?uuid=${coin.uuid}`}
+                key={coin.uuid}
               >
                 <span>
                   <img src={coin.iconUrl} alt={coin.name} />
@@ -88,6 +100,22 @@ function CoinList() {
               </Link>
             ))}
         </div>
+      </div>
+
+      {/* Pagination */}
+      <div className="pagination">
+        <button
+          className="pagination-btn pagination-btn-prev"
+          onClick={() => setPage(page - 1)}
+        >
+          Prev
+        </button>
+        <button
+          className="pagination-btn pagination-btn-next"
+          onClick={() => setPage(page + 1)}
+        >
+          Next
+        </button>
       </div>
     </div>
   );
