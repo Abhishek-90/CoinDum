@@ -32,6 +32,7 @@ body {
 
 .navbar {
   width: 100%;
+  max-width: 65em;
   display: flex;
   justify-content: space-between;
   align-items: center;
