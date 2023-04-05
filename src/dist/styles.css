@@ -32,8 +32,7 @@ body {
   text-decoration: none;
 }
 
-::-webkit-scrollbar,
-::-moz-scrollbar {
+::-webkit-scrollbar {
   width: 10px;
 }
 
@@ -463,6 +462,10 @@ body {
 }
 .pagination-btn:disabled {
   cursor: not-allowed;
+}
+.pagination-btn:disabled:hover {
+  background: inherit;
+  color: inherit;
 }
 .pagination-btn:hover {
   background: linear-gradient(25deg, #2600fc, #ff00ea);

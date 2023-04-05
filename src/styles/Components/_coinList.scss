@@ -205,9 +205,10 @@
 
     &:disabled {
       cursor: not-allowed;
-      // &:hover {
-      //   background:
-      // }
+      &:hover {
+        background: inherit;
+        color: inherit;
+      }
     }
 
     &:hover {
