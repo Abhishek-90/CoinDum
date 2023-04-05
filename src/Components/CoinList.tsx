@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import fetchData, { coinListOptions } from "../utils/fetchData";
 
@@ -9,7 +9,7 @@ function CoinList() {
   const [top4CoinData, setTop4CoinData] = useState([]);
   const [page, setPage] = useState<number>(1);
   const [pagination, setPagination] = useState<number[]>([]);
-  const [totalPages, setTotalPages] = useState(10);
+  const totalPages = useRef(10);
 
   useEffect(() => {
     console.log(
@@ -32,23 +32,31 @@ function CoinList() {
   useEffect(() => {
     let pages: number[] = [];
 
-    if (totalPages <= 6) {
-      for (let i = 1; i <= Math.min(6, totalPages); i++) {
+    if (totalPages.current <= 6) {
+      for (let i = 1; i <= Math.min(6, totalPages.current); i++) {
         pages.push(i);
       }
     } else if (
       (page >= 1 && page <= 3) ||
-      (page >= totalPages - 2 && page <= totalPages)
+      (page >= totalPages.current - 2 && page <= totalPages.current)
     ) {
       for (let i = 1; i <= 3; i = i + 1) pages.push(i);
 
       pages.push(0);
 
-      for (let i = totalPages - 2; i <= totalPages; i++) {
+      for (let i = totalPages.current - 2; i <= totalPages.current; i++) {
         pages.push(i);
       }
     } else {
-      pages = pages.concat([1, 0, page - 1, page, page + 1, 0, totalPages]);
+      pages = pages.concat([
+        1,
+        0,
+        page - 1,
+        page,
+        page + 1,
+        0,
+        totalPages.current,
+      ]);
     }
     setPagination(pages);
   }, [totalPages, page]);
@@ -161,7 +169,7 @@ function CoinList() {
         <button
           className="pagination-btn pagination-btn-next"
           onClick={() => setPage(page + 1)}
-          disabled={page >= totalPages}
+          disabled={page >= totalPages.current}
         >
           Next
         </button>
