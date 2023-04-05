@@ -172,6 +172,10 @@
         display: flex;
         justify-content: space-between;
       }
+
+      &:hover {
+        background: #230633;
+      }
     }
   }
 

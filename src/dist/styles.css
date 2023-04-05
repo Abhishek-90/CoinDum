@@ -432,6 +432,9 @@ body {
     justify-content: space-between;
   }
 }
+.coin-detail-wrapper .coin-detail .detail-row:hover {
+  background: #230633;
+}
 @media (max-width: 800px) {
   .coin-detail-wrapper {
     padding: 0.5em;
