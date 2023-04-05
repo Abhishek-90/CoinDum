@@ -155,6 +155,9 @@ function CoinList() {
               <span className="pagination-dots">{"..."}</span>
             )
           )}
+        <button className="pagination-btn pagination-mobile-view">
+          {page}
+        </button>
         <button
           className="pagination-btn pagination-btn-next"
           onClick={() => setPage(page + 1)}

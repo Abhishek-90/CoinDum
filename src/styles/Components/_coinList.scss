@@ -188,10 +188,21 @@
   color: $white;
   padding: 1em;
 
+  &-mobile-view {
+    margin: 0 2em;
+    @media (min-width: 801px) {
+      display: none;
+    }
+  }
+
   &-dots {
     margin-right: 1em;
     display: inline-flex;
     align-items: center;
+
+    @media (max-width: 800px) {
+      display: none;
+    }
   }
 
   &-btn {
@@ -219,6 +230,18 @@
     &-prev,
     &-page {
       margin-right: 1.5em;
+    }
+
+    &-page {
+      @media (max-width: 800px) {
+        display: none;
+      }
+    }
+
+    &-prev {
+      @media (max-width: 800px) {
+        margin-right: 0;
+      }
     }
   }
 

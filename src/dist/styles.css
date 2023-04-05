@@ -446,10 +446,23 @@ body {
   color: #dddfe4;
   padding: 1em;
 }
+.pagination-mobile-view {
+  margin: 0 2em;
+}
+@media (min-width: 801px) {
+  .pagination-mobile-view {
+    display: none;
+  }
+}
 .pagination-dots {
   margin-right: 1em;
   display: inline-flex;
   align-items: center;
+}
+@media (max-width: 800px) {
+  .pagination-dots {
+    display: none;
+  }
 }
 .pagination-btn {
   background: #dddfe4;
@@ -473,6 +486,16 @@ body {
 }
 .pagination-btn-prev, .pagination-btn-page {
   margin-right: 1.5em;
+}
+@media (max-width: 800px) {
+  .pagination-btn-page {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .pagination-btn-prev {
+    margin-right: 0;
+  }
 }
 @media (max-width: 800px) {
   .pagination {
