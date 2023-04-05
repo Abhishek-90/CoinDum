@@ -6,6 +6,8 @@
   box-sizing: border-box;
   font-family: $mainFont;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #2600fc $black;
 }
 
 html {
@@ -35,7 +37,8 @@ body {
   text-decoration: none;
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar,
+::-moz-scrollbar {
   width: 10px;
 }
 
