@@ -6,6 +6,8 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #2600fc #181616;
 }
 
 html {
@@ -30,7 +32,8 @@ body {
   text-decoration: none;
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar,
+::-moz-scrollbar {
   width: 10px;
 }
 
@@ -274,6 +277,7 @@ body {
   flex-wrap: nowrap;
   overflow-x: auto;
   align-items: center;
+  padding-bottom: 1em;
 }
 .top-4-coins-wrapper .top-4-coins .coin {
   margin: 0 2em;
@@ -439,8 +443,14 @@ body {
   width: 100%;
   justify-content: center;
   text-align: center;
+  vertical-align: middle;
   color: #dddfe4;
   padding: 1em;
+}
+.pagination-dots {
+  margin-right: 1em;
+  display: inline-flex;
+  align-items: center;
 }
 .pagination-btn {
   background: #dddfe4;
@@ -448,12 +458,18 @@ body {
   padding: 1em;
   font-weight: bold;
   color: #181616;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
-.pagination-btn-prev {
+.pagination-btn:disabled {
+  cursor: not-allowed;
+}
+.pagination-btn:hover {
+  background: linear-gradient(25deg, #2600fc, #ff00ea);
+  color: #dddfe4;
+}
+.pagination-btn-prev, .pagination-btn-page {
   margin-right: 1.5em;
-}
-.pagination-btn-next {
-  margin-left: 1.5em;
 }
 @media (max-width: 800px) {
   .pagination {

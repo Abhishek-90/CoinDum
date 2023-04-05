@@ -184,8 +184,15 @@
   width: 100%;
   justify-content: center;
   text-align: center;
+  vertical-align: middle;
   color: $white;
   padding: 1em;
+
+  &-dots {
+    margin-right: 1em;
+    display: inline-flex;
+    align-items: center;
+  }
 
   &-btn {
     background: $white;
@@ -193,13 +200,24 @@
     padding: 1em;
     font-weight: bold;
     color: $black;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
 
-    &-prev {
-      margin-right: 1.5em;
+    &:disabled {
+      cursor: not-allowed;
+      // &:hover {
+      //   background:
+      // }
     }
 
-    &-next {
-      margin-left: 1.5em;
+    &:hover {
+      background: linear-gradient(25deg, #2600fc, #ff00ea);
+      color: $white;
+    }
+
+    &-prev,
+    &-page {
+      margin-right: 1.5em;
     }
   }
 
