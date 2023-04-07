@@ -114,20 +114,16 @@ function CoinDetail({ uuid }: CoinDetailProps) {
     tags: ["layer-1", "proof-of-work"],
   });
 
-  // useEffect(() => {
-  //   async function fetchDataWrapper() {
-  //     const response = await fetchData(
-  //       `https://coinranking1.p.rapidapi.com/coin/${uuid}?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h`,
-  //       coinListOptions
-  //     );
-  //     setCoinDetail(response.coin);
-  //   }
-  //   fetchDataWrapper();
-  // }, []);
-
-  // useEffect(() => {
-  //   console.log(coinDetail);
-  // }, [coinDetail]);
+  useEffect(() => {
+    async function fetchDataWrapper() {
+      const response = await fetchData(
+        `https://coinranking1.p.rapidapi.com/coin/${uuid}?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h`,
+        coinListOptions
+      );
+      setCoinDetail(response.coin);
+    }
+    fetchDataWrapper();
+  }, []);
 
   return (
     <div className="container">
