@@ -1,5 +1,14 @@
+import CoinDetail from "../Components/CoinDetail";
+import { useSearchParams } from "react-router-dom";
+
 function CoinDetails() {
-  return <div>CoinDetails</div>;
+  const [params, setParams] = useSearchParams(window.location.search);
+
+  return (
+    <>
+      <CoinDetail uuid={params.get("uuid")} />
+    </>
+  );
 }
 
 export default CoinDetails;
