@@ -1,5 +1,16 @@
 @use "../Constants" as *;
 
+.h2 {
+  color: $white;
+  margin-top: 2em;
+  padding: 0.5em 1em;
+  font-size: 2em;
+
+  @media (max-width: 800px) {
+    padding: 0.5em;
+  }
+}
+
 .top-4-coins-wrapper {
   width: 100%;
   padding: 0.5em;
@@ -62,7 +73,7 @@
   width: 100%;
   padding: 0.5em 2em;
   color: $white;
-  margin-top: 4em;
+  // margin-top: 1em;
 
   .coin-detail {
     width: 100%;
