@@ -164,20 +164,22 @@ function CoinList() {
           Prev
         </button>
         {pagination.length > 0 &&
-          pagination.map((page) =>
-            page !== 0 ? (
+          pagination.map((p) =>
+            p !== 0 ? (
               <button
-                className="pagination-btn pagination-btn-page"
-                onClick={() => setPage(page)}
+                className={`pagination-btn pagination-btn-page ${
+                  p === page ? "current-page" : ""
+                }`}
+                onClick={() => setPage(p)}
               >
-                <span>{page}</span>
+                <span>{p}</span>
               </button>
             ) : (
               <span className="pagination-dots">{"..."}</span>
             )
           )}
         <button className="pagination-btn pagination-mobile-view">
-          {page}
+          {page + " / 10"}
         </button>
         <button
           className="pagination-btn pagination-btn-next"
