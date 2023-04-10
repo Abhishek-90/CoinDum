@@ -577,4 +577,24 @@ body {
   font-size: min(2em, 1em + 0.4vw);
 }
 
+.loader {
+  width: 100%;
+  padding: 1em 0;
+  display: flex;
+  justify-content: center;
+}
+.loader img {
+  width: 7em;
+  animation: rotation 1s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */

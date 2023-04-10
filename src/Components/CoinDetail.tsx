@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import fetchData, { coinListOptions } from "../utils/fetchData";
+import Loader from "./Loader";
 
 function CoinDetail({ uuid }: CoinDetailProps) {
   const [coinDetail, setCoinDetail] = useState<any>(undefined);
+  const [isFetching, setIsFetching] = useState<boolean>(true);
 
   useEffect(() => {
     async function fetchDataWrapper() {
@@ -13,11 +15,13 @@ function CoinDetail({ uuid }: CoinDetailProps) {
       setCoinDetail(response.coin);
     }
     fetchDataWrapper();
+    setTimeout(() => setIsFetching(false), 1000);
   }, []);
 
   return (
     <div className="container">
-      {coinDetail && (
+      {isFetching && <Loader />}
+      {!isFetching && coinDetail && (
         <div className="coin-details">
           <div className="coin-details-basic">
             <img src={coinDetail.iconUrl} alt={coinDetail.name} />
