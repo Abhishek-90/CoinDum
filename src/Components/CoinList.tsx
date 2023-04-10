@@ -15,11 +15,7 @@ function CoinList() {
   const totalPages = useRef(10);
 
   useEffect(() => {
-    console.log(
-      `https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=${RESULTS_PER_PAGE}&offset=${
-        (page - 1) * RESULTS_PER_PAGE
-      }`
-    );
+    setIsFetchingCoins(true);
     const runFetchData = async () => {
       const response = await fetchData(
         `https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=${RESULTS_PER_PAGE}&offset=${
