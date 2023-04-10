@@ -265,6 +265,18 @@ body {
   }
 }
 
+.h2 {
+  color: #dddfe4;
+  margin-top: 2em;
+  padding: 0.5em 1em;
+  font-size: 2em;
+}
+@media (max-width: 800px) {
+  .h2 {
+    padding: 0.5em;
+  }
+}
+
 .top-4-coins-wrapper {
   width: 100%;
   padding: 0.5em;
@@ -322,7 +334,6 @@ body {
   width: 100%;
   padding: 0.5em 2em;
   color: #dddfe4;
-  margin-top: 4em;
 }
 .coin-detail-wrapper .coin-detail {
   width: 100%;
@@ -575,6 +586,26 @@ body {
 }
 .coin-details-description p {
   font-size: min(2em, 1em + 0.4vw);
+}
+
+.loader {
+  width: 100%;
+  padding: 1em 0;
+  display: flex;
+  justify-content: center;
+}
+.loader img {
+  width: 7em;
+  animation: rotation 1s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
