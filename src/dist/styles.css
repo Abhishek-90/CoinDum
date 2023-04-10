@@ -403,7 +403,7 @@ body {
 }
 @media (max-width: 800px) {
   .coin-detail-wrapper .coin-detail .detail-row span img {
-    width: 2em;
+    width: 1.7em;
     margin-right: 0.7em;
   }
 }
@@ -413,7 +413,7 @@ body {
 }
 @media (max-width: 800px) {
   .coin-detail-wrapper .coin-detail .detail-row span p {
-    font-size: 1em;
+    font-size: 0.8em;
     width: 3.5rem;
   }
 }
