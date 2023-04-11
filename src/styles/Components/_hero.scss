@@ -1,6 +1,44 @@
 // Hero Component styles 👇
 @use "../Constants/" as *;
 
+.float-btc,
+.float-eth {
+  position: absolute;
+  width: 3.5em;
+  animation: floatCoin 2s infinite linear;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.float-btc {
+  left: 120px;
+}
+
+.float-eth {
+  top: 0px;
+  right: 120px;
+}
+
+@keyframes floatCoin {
+  0% {
+    top: 0px;
+  }
+  25% {
+    top: 30px;
+  }
+  50% {
+    top: 60px;
+  }
+  75% {
+    top: 30px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
 .intro {
   margin: 3em 0;
   color: $white;
