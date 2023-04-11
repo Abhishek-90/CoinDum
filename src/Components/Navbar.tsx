@@ -38,16 +38,16 @@ function Navbar() {
           </Link>
         </div>
         <div className="nav-links">
-          <Link className="link home-link" to="/">
+          <Link className="link home-link" to="/" onClick={goTop}>
             Home
           </Link>
-          <Link className="link about-link" to="/about">
+          <a className="link about-link" href="#market">
             About
-          </Link>
-          <Link className="link choose-link" to="/about">
+          </a>
+          <Link className="link choose-link" to="#choose">
             Choose Us
           </Link>
-          <Link className="link join-link" to="/about">
+          <Link className="link join-link" to="#join">
             Join Us
           </Link>
         </div>
