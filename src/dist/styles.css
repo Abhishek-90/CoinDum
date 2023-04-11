@@ -236,7 +236,7 @@ body {
   flex-wrap: wrap;
 }
 .intro h2 {
-  font-size: min(4em + 0.6vw, 6em);
+  font-size: min(3em + 0.6vw, 6em);
   letter-spacing: 0.3rem;
   line-height: 1.5;
 }
@@ -246,7 +246,7 @@ body {
   }
 }
 .intro p {
-  font-size: min(4em + 0.6vw, 6em);
+  font-size: min(3em + 0.6vw, 6em);
   font-weight: 600;
   text-transform: uppercase;
   background-clip: text;

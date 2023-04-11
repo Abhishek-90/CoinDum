@@ -13,7 +13,7 @@
   flex-wrap: wrap;
 
   h2 {
-    font-size: min(calc(4em + 0.6vw), 6em);
+    font-size: min(calc(3em + 0.6vw), 6em);
     letter-spacing: 0.3rem;
     line-height: 1.5;
 
@@ -23,7 +23,7 @@
   }
 
   p {
-    font-size: min(calc(4em + 0.6vw), 6em);
+    font-size: min(calc(3em + 0.6vw), 6em);
     font-weight: 600;
     text-transform: uppercase;
     background-clip: text;
