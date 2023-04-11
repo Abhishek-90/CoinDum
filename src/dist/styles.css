@@ -224,6 +224,45 @@ body {
   margin: 10px 0;
 }
 
+.float-btc,
+.float-eth {
+  position: absolute;
+  width: 3.5em;
+  animation: floatCoin 2s infinite linear;
+}
+@media (max-width: 1200px) {
+  .float-btc,
+  .float-eth {
+    display: none;
+  }
+}
+
+.float-btc {
+  left: 120px;
+}
+
+.float-eth {
+  top: 0px;
+  right: 120px;
+}
+
+@keyframes floatCoin {
+  0% {
+    top: 0px;
+  }
+  25% {
+    top: 30px;
+  }
+  50% {
+    top: 60px;
+  }
+  75% {
+    top: 30px;
+  }
+  100% {
+    top: 0px;
+  }
+}
 .intro {
   margin: 3em 0;
   color: #dddfe4;
@@ -236,7 +275,7 @@ body {
   flex-wrap: wrap;
 }
 .intro h2 {
-  font-size: min(4em + 0.6vw, 6em);
+  font-size: min(3em + 0.6vw, 6em);
   letter-spacing: 0.3rem;
   line-height: 1.5;
 }
@@ -246,7 +285,7 @@ body {
   }
 }
 .intro p {
-  font-size: min(4em + 0.6vw, 6em);
+  font-size: min(3em + 0.6vw, 6em);
   font-weight: 600;
   text-transform: uppercase;
   background-clip: text;
