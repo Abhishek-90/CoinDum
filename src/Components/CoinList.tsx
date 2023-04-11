@@ -117,41 +117,44 @@ function CoinList() {
       <h2 className="h2">Market Update</h2>
 
       {/* All Coin Details */}
+
       {isFetchingCoins && <Loader />}
       {!isFetchingCoins && (
-        <div className="coin-detail-wrapper">
-          <div className="coin-detail">
-            <div className="header">
-              <p>Coin</p>
-              <p>Price</p>
-              <p>24H Change</p>
-              <p>Market Cap</p>
-            </div>
+        <section id="market">
+          <div className="coin-detail-wrapper">
+            <div className="coin-detail">
+              <div className="header">
+                <p>Coin</p>
+                <p>Price</p>
+                <p>24H Change</p>
+                <p>Market Cap</p>
+              </div>
 
-            {coinData.length > 0 &&
-              coinData.map((coin: any) => (
-                <Link
-                  className="detail-row"
-                  to={`/coinDetails?uuid=${coin.uuid}`}
-                  key={coin.uuid}
-                >
-                  <span>
-                    <img src={coin.iconUrl} alt={coin.name} />
-                    <p>{coin.symbol}</p>
-                  </span>
-                  <p>{"$ " + parseFloat(coin.price).toFixed(2)}</p>
-                  <p
-                    className={`${
-                      parseFloat(coin.change) >= 0 ? "green" : "red"
-                    }`}
+              {coinData.length > 0 &&
+                coinData.map((coin: any) => (
+                  <Link
+                    className="detail-row"
+                    to={`/coinDetails?uuid=${coin.uuid}`}
+                    key={coin.uuid}
                   >
-                    {coin.change + " %"}
-                  </p>
-                  <p>{numberWithCommas(coin.marketCap)}</p>
-                </Link>
-              ))}
+                    <span>
+                      <img src={coin.iconUrl} alt={coin.name} />
+                      <p>{coin.symbol}</p>
+                    </span>
+                    <p>{"$ " + parseFloat(coin.price).toFixed(2)}</p>
+                    <p
+                      className={`${
+                        parseFloat(coin.change) >= 0 ? "green" : "red"
+                      }`}
+                    >
+                      {coin.change + " %"}
+                    </p>
+                    <p>{numberWithCommas(coin.marketCap)}</p>
+                  </Link>
+                ))}
+            </div>
           </div>
-        </div>
+        </section>
       )}
 
       {/* Pagination */}
